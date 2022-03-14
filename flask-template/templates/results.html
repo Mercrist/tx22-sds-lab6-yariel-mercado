@@ -1,0 +1,16 @@
+<html>
+
+<head>
+    <title>Quiz Results</title>
+
+</head>
+
+<body>
+    Scores:<br>
+    {%for state, answer in graded_answ.items()%}
+
+    <ol>User entered: {{user_anws.get(state)}}. The capital of {{state}} was {{answer}}</ol>
+    {%endfor%}
+</body>
+
+</html>

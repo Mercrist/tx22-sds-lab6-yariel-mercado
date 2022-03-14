@@ -17,6 +17,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from model import validate_user_response
 
 
 # -- Initialization section --
@@ -28,3 +29,16 @@ app = Flask(__name__)
 @app.route('/index')
 def index():
     return render_template("index.html")
+
+@app.route('/results', methods=['GET', 'POST'])
+def results():
+    if request.method == 'GET':
+        return "Fill out each state entry!"
+
+    answers = {"New York": request.form['New York'], "California": request.form['California'], 
+              "Texas": request.form['Texas'], "Colorado": request.form['Colorado'], "Hawaii": request.form['Hawaii']}
+
+    graded_answ = validate_user_response(answers)
+    return render_template("results.html", graded_answ=graded_answ, user_anws = answers)
+
+
