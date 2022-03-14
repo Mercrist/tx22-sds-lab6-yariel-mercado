@@ -14,6 +14,14 @@
 
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
+
+"""
+Collaborators
+------------
+Yariel Mercado
+Victor Akpan
+Pradeep Lamichhane
+"""
 from flask import Flask
 from flask import render_template
 from flask import request
