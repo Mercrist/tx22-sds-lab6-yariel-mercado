@@ -20,6 +20,6 @@ def validate_user_response(user_response):
     result = defaultdict(bool)
     for state, capital in user_response.items():
         if capital.lower() == states_with_capitals[state].lower():
-            result[state] = True
-        else: result[state] = False
+            result[state] = "correct"
+        else: result[state] = f"incorrect. The correct answer was {states_with_capitals.get(state)}"
     return result

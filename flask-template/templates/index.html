@@ -17,14 +17,17 @@
 <html>
 
 <head>
-    <title>Flask Template</title>
+    <title>Capital's Quiz</title>
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
 <body>
-    <form method="post" action="/results">
-        <input type="text" name="New York" placeholder="New York's Capital" />
-        <input type="text" name="California" placeholder="California's Capital" />
+    <form method="POST" action="/results">
+        <input type="text" name="New York" placeholder="Please enter New York's capital." /> <br>
+        <input type="text" name="California" placeholder="Please enter California's capital." /><br>
+        <input type="text" name="Texas" placeholder="Please enter Texas's capital." /><br>
+        <input type="text" name="Colorado" placeholder="Please enter Colorado's capital." /><br>
+        <input type="text" name="Hawaii" placeholder="Please enter Hawaii's capital." /><br>
         <input type="submit" value="Submit" />
     </form>
 </body>

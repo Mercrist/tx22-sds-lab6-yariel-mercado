@@ -7,10 +7,14 @@
 
 <body>
     Scores:<br>
-    {%for state, answer in graded_answ.items()%}
+    <ol>
 
-    <ol>User entered: {{user_anws.get(state)}}. The capital of {{state}} was {{answer}}</ol>
-    {%endfor%}
+        {%for state, answer in graded_answ.items()%}
+        <li>Student entered: {{user_anws.get(state)[0].upper() + user_anws.get(state)[1:].lower()}}. The capital of
+            {{state}} was {{answer}}!</li>
+        {%endfor%}
+    </ol>
+
 </body>
 
 </html>

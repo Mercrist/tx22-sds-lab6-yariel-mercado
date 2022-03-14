@@ -32,13 +32,14 @@ def index():
 
 @app.route('/results', methods=['GET', 'POST'])
 def results():
-    if request.method == 'GET':
-        return "Fill out each state entry!"
-
     answers = {"New York": request.form['New York'], "California": request.form['California'], 
-              "Texas": request.form['Texas'], "Colorado": request.form['Colorado'], "Hawaii": request.form['Hawaii']}
+                "Texas": request.form['Texas'], "Colorado": request.form['Colorado'], "Hawaii": request.form['Hawaii']}
+
+    for state in answers.keys():
+        if not answers.get(state):
+            return "Fill out each state entry with a valid input!" #even if the data is empty, it counts as a POST method
 
     graded_answ = validate_user_response(answers)
-    return render_template("results.html", graded_answ=graded_answ, user_anws = answers)
+    return render_template("results.html", graded_answ = graded_answ, user_anws = answers)
 
 
