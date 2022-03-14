@@ -23,9 +23,3 @@ def validate_user_response(user_response):
             result[state] = True
         else: result[state] = False
     return result
-
-
-            
-
-
-
