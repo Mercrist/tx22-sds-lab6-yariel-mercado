@@ -24,3 +24,7 @@
     background-color: #ffffff;
   }
 
+#button:hover{
+  transition: 1s;
+  background-color: lightgreen;
+}
