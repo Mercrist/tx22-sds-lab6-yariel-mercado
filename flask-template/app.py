@@ -40,7 +40,7 @@ def index():
 
 @app.route('/results', methods=['GET', 'POST'])
 def results():
-    if request.method == 'GET':
+    if request.method == 'GET': #if the user tries to directly reach the answers url, redirect
         return redirect(url_for('index'))
 
     answers = {"New York": request.form['New York'], "California": request.form['California'], 
@@ -48,7 +48,7 @@ def results():
 
     for state in answers.keys():
         if not answers.get(state):
-            return "Fill out each state entry with a valid input!" #even if the data is empty, it counts as a POST method
+            return "Fill out each state entry with a valid input!" 
 
     graded_answ = validate_user_response(answers)
     return render_template("results.html", graded_answ = graded_answ, user_anws = answers)
