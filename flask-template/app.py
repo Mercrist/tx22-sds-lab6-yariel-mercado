@@ -23,7 +23,7 @@ Victor Akpan
 Pradeep Lamichhane
 """
 from flask import Flask
-from flask import render_template
+from flask import render_template, redirect, url_for
 from flask import request
 from model import validate_user_response
 
@@ -40,6 +40,9 @@ def index():
 
 @app.route('/results', methods=['GET', 'POST'])
 def results():
+    if request.method == 'GET':
+        return redirect(url_for('index'))
+
     answers = {"New York": request.form['New York'], "California": request.form['California'], 
                 "Texas": request.form['Texas'], "Colorado": request.form['Colorado'], "Hawaii": request.form['Hawaii']}
 
