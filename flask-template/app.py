@@ -48,7 +48,7 @@ def results():
 
     for state in answers.keys():
         if not answers.get(state):
-            return "Fill out each state entry with a valid input!" 
+            return '''Fill out each state entry with a valid input!<br><br> <a href="index">Return to the quiz</a>''' 
 
     graded_answ = validate_user_response(answers)
     return render_template("results.html", graded_answ = graded_answ, user_anws = answers)
