@@ -33,3 +33,12 @@
   transition: 1s;
   background-color: lightgreen;
 }
+body{
+    font-size: 25px;
+    position:relative; 
+    left:80px;  
+    color:greenyellow;
+}
+h1{
+    color:blueviolet;
+}
